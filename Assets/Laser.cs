@@ -6,6 +6,8 @@ public class Laser : Weapon
 {
     private LineRenderer laser;
     private Vector3 target;
+    public GameObject HitEffect;
+    public float Range = 4f;
 
     // Start is called before the first frame update
     void Awake()
@@ -40,15 +42,16 @@ public class Laser : Weapon
 
     void collisionCast()
     {
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.5f * 0.14f, transform.up, 3f);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.5f * 0.14f, transform.up, Range);
 
         if (hit)
         {
             target = hit.point;
+            GameObject effect = Instantiate(HitEffect, hit.point, Quaternion.identity);
         }
         else
         {
-            target = transform.position + (transform.up * 3f);
+            target = transform.position + (transform.up * Range);
         }
     }
 }

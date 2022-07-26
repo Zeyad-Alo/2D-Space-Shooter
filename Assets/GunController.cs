@@ -26,11 +26,11 @@ public class GunController : MonoBehaviour
     {
         if(context.performed)
         {
-            gun.Shoot();
+            gun?.Shoot();
         }
         if(context.canceled)
         {
-            gun.StopShoot();
+            gun?.StopShoot();
         }
     }
 }
