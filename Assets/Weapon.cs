@@ -22,7 +22,8 @@ public abstract class Weapon : MonoBehaviour
         
         foreach (Transform child in player.transform) 
         {
-            GameObject.Destroy(child.gameObject);
+            if (!child.gameObject.CompareTag("Light"))
+                GameObject.Destroy(child.gameObject);
         }
 
 
