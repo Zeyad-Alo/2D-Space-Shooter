@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CanonProjectile : MonoBehaviour
+public class CanonProjectile2BecauseIwasTooHarshOnUnity : MonoBehaviour
 {
     public GameObject HitEffect;
     public GameObject MuzzleEffect;
@@ -17,20 +17,7 @@ public class CanonProjectile : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if(col.CompareTag("Enemy"))
-        {
-            col.GetComponent<TurretController>()?.TakeDamage(damage);
-        }
-        else if (col.CompareTag("Player"))
-        {
-            col.GetComponent<MainController>()?.TakeDamage(damage);
-        }
-        
-        Destroy(gameObject);
-
-    }
+    
 
     void OnDestroy()
     {

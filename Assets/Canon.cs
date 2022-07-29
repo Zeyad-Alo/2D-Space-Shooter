@@ -5,7 +5,6 @@ using UnityEngine;
 public class Canon : Weapon
 {
     public GameObject prefab;
-    private Transform firepoint;
     private bool canshoot = true;
     [SerializeField] float firedelay = 0.5f;
 
@@ -18,7 +17,7 @@ public class Canon : Weapon
     void Start()
     {
         //prefab = GameObject.FindWithTag("Projectile");
-        firepoint = gameObject.transform;
+        
     }
 
     // Update is called once per frame
@@ -27,6 +26,7 @@ public class Canon : Weapon
         if (_held && canshoot)
         {
             GameObject projectile = Instantiate(prefab, firepoint.position, firepoint.rotation);
+            projectile.GetComponent<CanonProjectile>().damage = 30;
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
             rb.AddForce(firepoint.up * 5f, ForceMode2D.Impulse);
 

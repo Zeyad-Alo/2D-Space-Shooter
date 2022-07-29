@@ -14,6 +14,7 @@ public class Laser : Weapon
     {
         laser = GetComponent<LineRenderer>();
         laser.positionCount = 2;
+        _damage = 0.1f;
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class Laser : Weapon
         if (_held)
         {
             collisionCast();
-            laser.SetPosition(0, transform.position);
+            laser.SetPosition(0, firepoint.position);
             laser.SetPosition(1, target);
         }
     }
@@ -42,16 +43,24 @@ public class Laser : Weapon
 
     void collisionCast()
     {
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.5f * 0.14f, transform.up, Range);
+        RaycastHit2D hit = Physics2D.CircleCast(firepoint.position, 0.5f * 0.14f, transform.up, Range);
 
         if (hit)
         {
             target = hit.point;
             GameObject effect = Instantiate(HitEffect, hit.point, Quaternion.identity);
+            if (hit.transform.CompareTag("Enemy"))
+            {
+                hit.transform.gameObject.GetComponent<TurretController>()?.TakeDamage(_damage);
+            }
+            else if (hit.transform.CompareTag("Player"))
+            {
+                hit.transform.gameObject.GetComponent<MainController>()?.TakeDamage(_damage);
+            }
         }
         else
         {
-            target = transform.position + (transform.up * Range);
+            target = firepoint.position + (transform.up * Range);
         }
     }
 }

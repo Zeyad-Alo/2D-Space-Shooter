@@ -7,11 +7,12 @@ TagManager:
   - Projectile
   - Enemy
   - Light
+  - Weapon
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 

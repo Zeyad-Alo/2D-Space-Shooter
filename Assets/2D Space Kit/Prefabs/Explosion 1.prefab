@@ -4898,7 +4898,7 @@ GameObject:
   - component: {fileID: 19900002}
   - component: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Explosion
+  m_Name: Explosion 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5136,8 +5136,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.6
-      minScalar: 0.2
+      scalar: 8.46
+      minScalar: 6.46
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -8692,8 +8692,8 @@ ParticleSystem:
       emitProbability: 1
   LightsModule:
     enabled: 0
-    ratio: 1
-    light: {fileID: 5453764191117727936, guid: 1b067b6c63f74044eb6c34fc552a1593, type: 3}
+    ratio: 0
+    light: {fileID: 0}
     randomDistribution: 1
     color: 1
     range: 1

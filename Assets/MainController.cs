@@ -7,6 +7,8 @@ public class MainController : MonoBehaviour
 {
     [SerializeField] Vector3 moveVal;
     [SerializeField] public float moveSpeed;
+    public float health = 1000;
+    float currenthealth;
 
     private Vector3 mousePos;
 
@@ -25,9 +27,14 @@ public class MainController : MonoBehaviour
     }
 
 
-    public void Move(InputAction.CallbackContext context)       // UNITY EVENT INVOKED BY WHENEVER MOVEMENT BUTTONS ARE PRESSED
+    public void OnMove(InputValue value)       // UNITY EVENT INVOKED BY WHENEVER MOVEMENT BUTTONS ARE PRESSED
     {
-        moveVal = context.ReadValue<Vector2>().normalized;
+        moveVal = value.Get<Vector2>().normalized;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
     }
 
 }
