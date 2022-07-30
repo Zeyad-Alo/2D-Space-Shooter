@@ -8,15 +8,8 @@ public class Canon : Weapon
     private bool canshoot = true;
     [SerializeField] float firedelay = 0.5f;
 
-    // void Awake()
-    // {
-    //     _damage = 1f;
-    // }
-
-    // Start is called before the first frame update
     void Start()
     {
-        //prefab = GameObject.FindWithTag("Projectile");
         
     }
 
@@ -26,7 +19,7 @@ public class Canon : Weapon
         if (_held && canshoot)
         {
             GameObject projectile = Instantiate(prefab, firepoint.position, firepoint.rotation);
-            projectile.GetComponent<CanonProjectile>().damage = 30;
+            projectile.GetComponent<CanonProjectile>().damage = _damage;
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
             rb.AddForce(firepoint.up * 5f, ForceMode2D.Impulse);
 

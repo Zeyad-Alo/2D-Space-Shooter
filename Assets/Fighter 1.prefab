@@ -352,6 +352,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1273250940363346982, guid: 7366e08f1e5e9474faeb843f70e2db8d, type: 3}
     - target: {fileID: 2875846178395195829, guid: 5ece7eddfd3fdff4c8a851fa295524d1, type: 3}
+      propertyPath: _damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2875846178395195829, guid: 5ece7eddfd3fdff4c8a851fa295524d1, type: 3}
+      propertyPath: firedelay
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2875846178395195829, guid: 5ece7eddfd3fdff4c8a851fa295524d1, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}

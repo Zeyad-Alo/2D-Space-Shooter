@@ -42,6 +42,17 @@ public class GunController : MonoBehaviour
         }
     }
 
+    public void StopFire()       // UNITY EVENT INVOKED WHENEVER FIRE BUTTON IS PRESSED
+    {
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            if(inventory.Count != 0 && inventory[i]._isActive)
+            {
+                inventory[i].StopShoot();
+            }
+        }
+    }
+
     void Update()
     {
         if(Mouse.current.leftButton.wasReleasedThisFrame && inventory.Count != 0 && CompareTag("Player"))
@@ -71,7 +82,7 @@ public class GunController : MonoBehaviour
 
          foreach (Transform child in transform) 
         {
-            if (!child.gameObject.CompareTag("Light"))
+            if (child.gameObject.CompareTag("Weapon"))
             {
                 //inventory.Add(child.GetComponent<Weapon>());
                 inventory[i]._isActive = true;
