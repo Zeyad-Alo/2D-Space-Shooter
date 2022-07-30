@@ -26,6 +26,11 @@ public class Canon : Weapon
             canshoot = false;
             StartCoroutine(ShootDelay());
         }
+
+        if (DetectionArea)
+        {
+            CheckNearby();
+        }
         
     }
 

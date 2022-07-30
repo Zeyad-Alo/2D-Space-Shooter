@@ -19,14 +19,7 @@ public class CanonProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.CompareTag("Enemy"))
-        {
-            col.GetComponent<TurretController>()?.TakeDamage(damage);
-        }
-        else if (col.CompareTag("Player"))
-        {
-            col.GetComponent<MainController>()?.TakeDamage(damage);
-        }
+        col.GetComponent<Health>()?.OnDamageTaken(damage);
         
         Destroy(gameObject);
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1142213900802258589}
   - component: {fileID: 6120881698552745092}
   - component: {fileID: 6548076255641470321}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 4714488633255733951}
   - component: {fileID: 243022644834496116}
   - component: {fileID: 8766960804941519679}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 2875846178395195829}
   - component: {fileID: -1812265496761153155}
   - component: {fileID: 3602544977750159185}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CanonGun
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1800473148818785793}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

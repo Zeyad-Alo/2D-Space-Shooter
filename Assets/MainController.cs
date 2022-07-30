@@ -32,9 +32,4 @@ public class MainController : MonoBehaviour
         moveVal = value.Get<Vector2>().normalized;
     }
 
-    public void TakeDamage(float damage)
-    {
-        health -= damage;
-    }
-
 }

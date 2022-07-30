@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: -8202106857710915658}
   - component: {fileID: 6621780506810115240}
   - component: {fileID: -3416408682962558369}
-  m_Layer: 2
+  - component: {fileID: -8197733321560246951}
+  m_Layer: 7
   m_Name: Projectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,6 +261,21 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 1
   m_Emitting: 1
+--- !u!114 &-8197733321560246951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273250940363346982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbaffbafaead6c54faf87da00354a14b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 0.01
+  CurrentHealth: 0
+  DestroyEffect: {fileID: 100002, guid: cafecd3fc3b761c45bb1553f35cf5c96, type: 3}
 --- !u!1 &3611512740892681723
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 970860029044025923}
   - component: {fileID: 3661193699388804250}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

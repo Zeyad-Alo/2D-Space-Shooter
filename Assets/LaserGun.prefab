@@ -80,8 +80,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f108d245d280cf46a0594699ace2acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 0
+  _damage: 0.1
   _isActive: 0
+  LaserWidth: 0.1404953
   HitEffect: {fileID: 100002, guid: 565cdc2ed7b030a41accd8f00ae59a50, type: 3}
   Range: 6
 --- !u!120 &1902234086717082297

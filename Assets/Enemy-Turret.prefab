@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -8421744350382841907}
   - component: {fileID: 5585247392021003603}
   - component: {fileID: 4976808513383330445}
+  - component: {fileID: 1197699731136232847}
   m_Layer: 0
   m_Name: Enemy-Turret
   m_TagString: Enemy
@@ -164,6 +165,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.24
+--- !u!114 &1197699731136232847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4376664614461346325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbaffbafaead6c54faf87da00354a14b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  CurrentHealth: 0
+  DestroyEffect: {fileID: 100002, guid: 0ba461968f197dc4f8b7b3a09c23f092, type: 3}
 --- !u!1 &4376664614922138294
 GameObject:
   m_ObjectHideFlags: 0

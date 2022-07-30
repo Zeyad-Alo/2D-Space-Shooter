@@ -8,6 +8,7 @@ public abstract class Weapon : MonoBehaviour
     protected bool _held = false;
     protected Transform firepoint;
     public bool _isActive = false;
+    public bool DetectionArea = false;
 
     public abstract void Shoot();
 
@@ -25,7 +26,6 @@ public abstract class Weapon : MonoBehaviour
     {
         _held = false;
     }
-
 
     public void PickupWeapon()
     {
@@ -57,4 +57,14 @@ public abstract class Weapon : MonoBehaviour
             PickupWeapon();
         }
    }
+
+   public void CheckNearby()
+    {
+        Debug.Log("check");
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, 8, LayerMask.GetMask("Player"));
+        if (hit)
+        {
+            _isActive = true;
+        }
+    }
 }

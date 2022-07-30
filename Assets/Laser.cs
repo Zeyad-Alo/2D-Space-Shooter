@@ -5,6 +5,7 @@ using UnityEngine;
 public class Laser : Weapon
 {
     private LineRenderer laser;
+    public float LaserWidth;
     private Vector3 target;
     public GameObject HitEffect;
     public float Range = 4f;
@@ -13,8 +14,9 @@ public class Laser : Weapon
     void Awake()
     {
         laser = GetComponent<LineRenderer>();
+        laser.startWidth = LaserWidth;
         laser.positionCount = 2;
-        _damage = 0.1f;
+        //_damage = 0.1f;
     }
 
     // Update is called once per frame
@@ -49,14 +51,7 @@ public class Laser : Weapon
         {
             target = hit.point;
             GameObject effect = Instantiate(HitEffect, hit.point, Quaternion.identity);
-            if (hit.transform.CompareTag("Enemy"))
-            {
-                hit.transform.gameObject.GetComponent<TurretController>()?.TakeDamage(_damage);
-            }
-            else if (hit.transform.CompareTag("Player"))
-            {
-                hit.transform.gameObject.GetComponent<MainController>()?.TakeDamage(_damage);
-            }
+            hit.transform.gameObject.GetComponent<Health>()?.OnDamageTaken(_damage);
         }
         else
         {

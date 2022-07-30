@@ -89,11 +89,5 @@ public class GunController : MonoBehaviour
                 i += 1;
             }
         }
-
-        // for (int i = 0; i < inventory.Count; i++)
-        // {
-        //     inventory[i]
-        //     inventory[i]._isActive = true;
-        // }
     }
 }

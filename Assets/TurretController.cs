@@ -30,14 +30,4 @@ public class TurretController : MonoBehaviour
     {
         transform.Rotate(new Vector3(0,0,0.7f));
     }
-
-    public void TakeDamage(float damage)
-    {
-        CurrentHealth -= damage;
-        if (CurrentHealth <= 0)
-        {
-            Destroy(gameObject);
-            GameObject effect = Instantiate(DestroyEffect, transform.position, Quaternion.identity);
-        }
-    }
 }
