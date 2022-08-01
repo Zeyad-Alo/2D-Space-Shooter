@@ -38,9 +38,24 @@ public class Health : MonoBehaviour
         }
     }
 
+    public float GetMaxHealth()
+    {
+        return MaxHealth;
+    }
+
+    public float GetCurrentHealth()
+    {
+        return CurrentHealth;
+    }
+
     void OnDeath()
     {
         Destroy(gameObject);
         GameObject effect = Instantiate(DestroyEffect, transform.position, Quaternion.identity);
+
+        if (transform.parent)
+        {
+            transform.parent.GetComponent<Health>().OnDamageTaken(MaxHealth * 2);
+        }
     }
 }

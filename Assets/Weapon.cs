@@ -60,11 +60,15 @@ public abstract class Weapon : MonoBehaviour
 
    public void CheckNearby()
     {
-        Debug.Log("check");
-        Collider2D hit = Physics2D.OverlapCircle(transform.position, 8, LayerMask.GetMask("Player"));
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 1, transform.up, 8, LayerMask.GetMask("Player"));
         if (hit)
         {
             _isActive = true;
+        }
+        else
+        {
+            StopShoot();
+            _isActive = false;
         }
     }
 }

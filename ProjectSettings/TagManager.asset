@@ -9,6 +9,8 @@ TagManager:
   - Light
   - Weapon
   - Barrier
+  - VCam
+  - Background
   layers:
   - Default
   - TransparentFX

@@ -82,6 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 0.1
   _isActive: 0
+  DetectionArea: 0
   LaserWidth: 0.1404953
   HitEffect: {fileID: 100002, guid: 565cdc2ed7b030a41accd8f00ae59a50, type: 3}
   Range: 6
@@ -403,7 +404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3864505676292282814
 RectTransform:
   m_ObjectHideFlags: 0

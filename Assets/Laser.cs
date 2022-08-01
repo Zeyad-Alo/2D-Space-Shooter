@@ -9,6 +9,7 @@ public class Laser : Weapon
     private Vector3 target;
     public GameObject HitEffect;
     public float Range = 4f;
+    public Transform aim;
 
     // Start is called before the first frame update
     void Awake()
@@ -45,7 +46,13 @@ public class Laser : Weapon
 
     void collisionCast()
     {
-        RaycastHit2D hit = Physics2D.CircleCast(firepoint.position, 0.5f * 0.14f, transform.up, Range);
+        var Direction = transform.up;
+        if (DetectionArea)
+        {
+            Direction = aim.position - firepoint.position;
+        }
+
+        RaycastHit2D hit = Physics2D.CircleCast(firepoint.position, 0.5f * LaserWidth, Direction.normalized, Range);
 
         if (hit)
         {
@@ -55,7 +62,7 @@ public class Laser : Weapon
         }
         else
         {
-            target = firepoint.position + (transform.up * Range);
+            target = firepoint.position + (Direction.normalized * Range);
         }
     }
 }
